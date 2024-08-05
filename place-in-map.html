@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7d3c5fa9fbd6928c61a84fbb3c111f68 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7d3c5fa9fbd6928c61a84fbb3c111f68" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7d3c5fa9fbd6928c61a84fbb3c111f68 = L.map(
+                "map_7d3c5fa9fbd6928c61a84fbb3c111f68",
+                {
+                    center: [28.978, 31.1344],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_7d3c5fa9fbd6928c61a84fbb3c111f68);
+
+            
+
+        
+    
+            var tile_layer_238bd27ad0d897d10a478f39bf802606 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_238bd27ad0d897d10a478f39bf802606.addTo(map_7d3c5fa9fbd6928c61a84fbb3c111f68);
+        
+    
+            var tile_layer_f4f8127e8ad75eeae999243ea86492e9 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_f4f8127e8ad75eeae999243ea86492e9.addTo(map_7d3c5fa9fbd6928c61a84fbb3c111f68);
+        
+    
+            var tile_layer_11fc8651bf5fa3ac0623e28af14563a7 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_11fc8651bf5fa3ac0623e28af14563a7.addTo(map_7d3c5fa9fbd6928c61a84fbb3c111f68);
+        
+    
+            var layer_control_4c827cf00ad44d73f296112a4fc79261_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_238bd27ad0d897d10a478f39bf802606,
+                    "Esri.WorldStreetMap" : tile_layer_f4f8127e8ad75eeae999243ea86492e9,
+                    "Esri.WorldImagery" : tile_layer_11fc8651bf5fa3ac0623e28af14563a7,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_4c827cf00ad44d73f296112a4fc79261 = L.control.layers(
+                layer_control_4c827cf00ad44d73f296112a4fc79261_layers.base_layers,
+                layer_control_4c827cf00ad44d73f296112a4fc79261_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_7d3c5fa9fbd6928c61a84fbb3c111f68);
+
+        
+    
+            var marker_5b638a8428ee6abdb96d6979f2a95c7f = L.marker(
+                [29.978, 31.1344],
+                {}
+            ).addTo(map_7d3c5fa9fbd6928c61a84fbb3c111f68);
+        
+    
+        var popup_fca95f8c906ac8a9ccdea39bc1f9039a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1cace4b6ab18d7160eb29afec4820d3d = $(`<div id="html_1cace4b6ab18d7160eb29afec4820d3d" style="width: 100.0%; height: 100.0%;">Grande Pirâmide de Gizé</div>`)[0];
+                popup_fca95f8c906ac8a9ccdea39bc1f9039a.setContent(html_1cace4b6ab18d7160eb29afec4820d3d);
+            
+        
+
+        marker_5b638a8428ee6abdb96d6979f2a95c7f.bindPopup(popup_fca95f8c906ac8a9ccdea39bc1f9039a)
+        ;
+
+        
+    
+    
+            var marker_c9e1fb462cbd230c16758a31010df488 = L.marker(
+                [31.2094, 29.913],
+                {}
+            ).addTo(map_7d3c5fa9fbd6928c61a84fbb3c111f68);
+        
+    
+        var popup_d23813cc09fc6680b2ed5accdf539d6c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d4f1457065a6f2a6ec93c3c9a6aa0ca1 = $(`<div id="html_d4f1457065a6f2a6ec93c3c9a6aa0ca1" style="width: 100.0%; height: 100.0%;">Farol de Alexandria</div>`)[0];
+                popup_d23813cc09fc6680b2ed5accdf539d6c.setContent(html_d4f1457065a6f2a6ec93c3c9a6aa0ca1);
+            
+        
+
+        marker_c9e1fb462cbd230c16758a31010df488.bindPopup(popup_d23813cc09fc6680b2ed5accdf539d6c)
+        ;
+
+        
+    
+</script>
+</html>
